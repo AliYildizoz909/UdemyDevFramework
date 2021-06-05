@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DevFramework.Northwind.DataAccess.Concrete.EntityFramework;
+﻿using DevFramework.Northwind.DataAccess.Concrete.EntityFramework;
+using DevFramework.Northwind.DataAccess.Concrete.NHibernate;
+using DevFramework.Northwind.DataAccess.Concrete.NHibernate.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DevFramework.Northwind.DataAccess.Tests.EntityFrameworkTests
+namespace DevFramework.Northwind.DataAccess.Tests.NhibernateTests
 {
     [TestClass]
     public class NhibernateTest
@@ -12,7 +11,7 @@ namespace DevFramework.Northwind.DataAccess.Tests.EntityFrameworkTests
         [TestMethod]
         public void Get_all_returns_all_products()
         {
-            EfProductDal productDal = new EfProductDal();
+            NhProductDal productDal = new NhProductDal(new SqlServerHelper());
 
             var result = productDal.GetList();
 
@@ -22,7 +21,7 @@ namespace DevFramework.Northwind.DataAccess.Tests.EntityFrameworkTests
         [TestMethod]
         public void Get_all_with_parameter_returns_filtered_products()
         {
-            EfProductDal productDal = new EfProductDal();
+            NhProductDal productDal = new NhProductDal(new SqlServerHelper());
 
             var result = productDal.GetList(product => product.ProductName.Contains("ab"));
 
