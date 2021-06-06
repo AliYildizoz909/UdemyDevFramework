@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DevFramework.Core.Aspects.Postsharp;
+using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
+using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.CrossCuttingConcerns.Validation.FluentValidation;
 using DevFramework.Core.DataAccess;
 using DevFramework.Northwind.Business.Abstract;
@@ -22,6 +24,7 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
             _productDal = productDal;
         }
 
+        [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetAll()
         {
             return _productDal.GetList();
@@ -33,6 +36,7 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("",typeof(MemoryCacheManager))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
