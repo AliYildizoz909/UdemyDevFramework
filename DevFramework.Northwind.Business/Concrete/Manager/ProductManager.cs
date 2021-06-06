@@ -32,7 +32,6 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
         [FluentValidationAspect(typeof(ProductValidator))]
         public Product Add(Product product)
         {
-            ValidatorTool.FluentValidate(new ProductValidator(), product);
             return _productDal.Add(product);
         }
 
