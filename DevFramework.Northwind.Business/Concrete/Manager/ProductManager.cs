@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DevFramework.Core.Aspects.Postsharp;
+using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
+using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 using DevFramework.Core.CrossCuttingConcerns.Validation.FluentValidation;
 using DevFramework.Core.DataAccess;
 using DevFramework.Northwind.Business.Abstract;
@@ -40,6 +42,14 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
         public Product Update(Product product)
         {
             return _productDal.Update(product);
+        }
+
+        [TransactionScopeAspect]
+        public void TransactionalOperation(Product product1, Product product2)
+        {
+            _productDal.Add(product1);
+
+            _productDal.Add(product2);
         }
     }
 }
