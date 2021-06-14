@@ -14,10 +14,11 @@ namespace DevFramework.Core.Aspects.Postsharp.CacheAspects
         private Type _cacheType;
         private ICacheManager _cacheManager;
 
-        public CacheRemoveAspect(string pattern, Type cacheType)
+        public CacheRemoveAspect(string pattern, Type cacheType,int priority)
         {
             _pattern = pattern;
             _cacheType = cacheType;
+            AspectPriority = priority;
         }
 
         public override void RuntimeInitialize(MethodBase method)

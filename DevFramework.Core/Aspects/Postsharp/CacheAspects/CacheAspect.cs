@@ -15,10 +15,11 @@ namespace DevFramework.Core.Aspects.Postsharp.CacheAspects
         private int _cacheByMinute;
         private ICacheManager _cacheManager;
 
-        public CacheAspect(Type cacheType, int cacheByMinute=60)
+        public CacheAspect(Type cacheType,int priority, int cacheByMinute=60)
         {
             _cacheType = cacheType;
             _cacheByMinute = cacheByMinute;
+            AspectPriority = priority;
         }
 
         public override void RuntimeInitialize(MethodBase method)

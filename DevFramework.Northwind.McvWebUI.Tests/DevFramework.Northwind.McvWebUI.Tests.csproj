@@ -62,12 +62,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DevFramework.Northwind.McvWebUI\DevFramework.Northwind.McvWebUI.csproj">
-      <Project>{85D7F357-984A-48ED-A39B-E82DD0ACC804}</Project>
-      <Name>DevFramework.Northwind.McvWebUI</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

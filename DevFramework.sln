@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFramework.Northwind.Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFramework.Northwind.Business", "DevFramework.Northwind.Business\DevFramework.Northwind.Business.csproj", "{2EC540B6-64CD-429D-821F-D0E97D8FC7AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.McvWebUI", "DevFramework.Northwind.McvWebUI\DevFramework.Northwind.McvWebUI.csproj", "{85D7F357-984A-48ED-A39B-E82DD0ACC804}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.McvWebUI.Tests", "DevFramework.Northwind.McvWebUI.Tests\DevFramework.Northwind.McvWebUI.Tests.csproj", "{481588B0-55D8-49EF-B681-828154661238}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFramework.Northwind.DataAccess.Tests", "DevFramework.Northwind.DataAccess.Tests\DevFramework.Northwind.DataAccess.Tests.csproj", "{C4F9BE6F-210D-4FFB-AA82-E5CC17F27D04}"
@@ -43,6 +41,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DevFramework.Northwind.WcfS
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.McvWebUI", "DevFramework.Northwind.McvWebUI\DevFramework.Northwind.McvWebUI.csproj", "{517E1765-9627-451D-97C8-B6EB7A5B9E3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,10 +65,6 @@ Global
 		{2EC540B6-64CD-429D-821F-D0E97D8FC7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EC540B6-64CD-429D-821F-D0E97D8FC7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EC540B6-64CD-429D-821F-D0E97D8FC7AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85D7F357-984A-48ED-A39B-E82DD0ACC804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85D7F357-984A-48ED-A39B-E82DD0ACC804}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85D7F357-984A-48ED-A39B-E82DD0ACC804}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85D7F357-984A-48ED-A39B-E82DD0ACC804}.Release|Any CPU.Build.0 = Release|Any CPU
 		{481588B0-55D8-49EF-B681-828154661238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{481588B0-55D8-49EF-B681-828154661238}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{481588B0-55D8-49EF-B681-828154661238}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,6 +85,10 @@ Global
 		{71D2B84D-EED8-4F56-80F9-97BE11F650E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71D2B84D-EED8-4F56-80F9-97BE11F650E9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{71D2B84D-EED8-4F56-80F9-97BE11F650E9}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{517E1765-9627-451D-97C8-B6EB7A5B9E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517E1765-9627-451D-97C8-B6EB7A5B9E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517E1765-9627-451D-97C8-B6EB7A5B9E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517E1765-9627-451D-97C8-B6EB7A5B9E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

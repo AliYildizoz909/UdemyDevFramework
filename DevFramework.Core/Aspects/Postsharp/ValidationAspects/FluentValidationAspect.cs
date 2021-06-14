@@ -10,9 +10,11 @@ namespace DevFramework.Core.Aspects.Postsharp.ValidationAspects
     public class FluentValidationAspect : OnMethodBoundaryAspect
     {
         private Type _validatorType;
-        public FluentValidationAspect(Type validatorType)
+        public FluentValidationAspect(Type validatorType, int priority)
         {
             _validatorType = validatorType;
+            AspectPriority = priority;
+            
         }
         public override void OnEntry(MethodExecutionArgs args)
         {

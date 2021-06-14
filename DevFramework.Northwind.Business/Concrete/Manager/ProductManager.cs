@@ -26,9 +26,10 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
             _productDal = productDal;
         }
 
-        [CacheAspect(typeof(MemoryCacheManager))]
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
+        
+        [LogAspect(typeof(DatabaseLogger),2)]
+        [LogAspect(typeof(FileLogger),3)]
+        [CacheAspect(typeof(MemoryCacheManager), 1)]
         public List<Product> GetAll()
         {
             return _productDal.GetList();
@@ -39,20 +40,21 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
             return _productDal.Get(p => p.ProductId == id);
         }
 
-        [FluentValidationAspect(typeof(ProductValidator))]
-        [CacheRemoveAspect("",typeof(MemoryCacheManager))]
+        
+        [CacheRemoveAspect("",typeof(MemoryCacheManager),2)]
+        [FluentValidationAspect(typeof(ProductValidator), 1)]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
         }
 
-        [FluentValidationAspect(typeof(ProductValidator))]
+        [FluentValidationAspect(typeof(ProductValidator),1)]
         public Product Update(Product product)
         {
             return _productDal.Update(product);
         }
 
-        [TransactionScopeAspect]
+        [TransactionScopeAspect(1)]
         public void TransactionalOperation(Product product1, Product product2)
         {
             _productDal.Add(product1);

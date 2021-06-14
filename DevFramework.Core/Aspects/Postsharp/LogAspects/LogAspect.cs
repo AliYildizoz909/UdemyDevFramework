@@ -17,9 +17,10 @@ namespace DevFramework.Core.Aspects.Postsharp.LogAspects
         private Type _loggerType;
         private LoggerService _loggerService;
 
-        public LogAspect(Type loggerType)
+        public LogAspect(Type loggerType,int priority)
         {
             _loggerType = loggerType;
+            AspectPriority = priority;
         }
 
         public override void RuntimeInitialize(MethodBase method)

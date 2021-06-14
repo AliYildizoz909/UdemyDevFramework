@@ -9,13 +9,14 @@ namespace DevFramework.Core.Aspects.Postsharp.TransactionAspects
     {
         private TransactionScopeOption _option;
 
-        public TransactionScopeAspect(TransactionScopeOption option)
+        public TransactionScopeAspect(TransactionScopeOption option,int priority)
         {
             _option = option;
+            AttributePriority = priority;
         }
-        public TransactionScopeAspect()
+        public TransactionScopeAspect(int priority)
         {
-           
+            AspectPriority = priority;
         }
 
         public override void OnEntry(MethodExecutionArgs args)
