@@ -1,0 +1,12 @@
+﻿@model ProductListViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var item in Model.Products)
+{
+    @item.ProductName
+    <br />
+}
+
+

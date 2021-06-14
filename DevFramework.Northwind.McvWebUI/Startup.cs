@@ -1,3 +1,5 @@
+using Autofac;
+using DevFramework.Northwind.Business.DependencyResolvers.Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -52,6 +54,14 @@ namespace DevFramework.Northwind.McvWebUI
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+       
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new ValidationModule());
+            builder.RegisterModule(new BusinessModule());
+
         }
     }
 }
