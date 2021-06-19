@@ -55,13 +55,11 @@ namespace DevFramework.Core.Aspects.Postsharp.LogAspects
                     MethodName = args.Method.Name,
                     Parameters = logParameters.ToList()
                 };
-                _loggerService.Info(logDetail);
+                _loggerService.Info(logDetail.ToString());
             }
             catch (Exception)
             {
             }
-
-
         }
     }
 }

@@ -14,7 +14,6 @@ namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net
         {
             _log = log;
         }
-
         public bool IsInfoEnable => _log.IsInfoEnabled;
         public bool IsDebugEnabled => _log.IsDebugEnabled;
         public bool IsWarnEnabled => _log.IsWarnEnabled;
