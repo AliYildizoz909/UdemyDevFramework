@@ -18,6 +18,7 @@ namespace DevFramework.Core.Aspects.Postsharp.CacheAspects
         public CacheAspect(Type cacheType,int priority, int cacheByMinute=60)
         {
             _cacheType = cacheType;
+
             _cacheByMinute = cacheByMinute;
             AspectPriority = priority;
         }

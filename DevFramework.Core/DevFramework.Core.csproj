@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Aspects\Postsharp\PerformanceAspects\" />
     <Folder Include="Utilities\Mvc\Infrastructure\" />
   </ItemGroup>
 

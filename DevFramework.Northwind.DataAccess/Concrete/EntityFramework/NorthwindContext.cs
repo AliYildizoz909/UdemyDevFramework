@@ -9,7 +9,7 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
 {
     public class NorthwindContext : DbContext
     {
-        public NorthwindContext():base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        public NorthwindContext():base(@"Data Source=DESKTOP-3EJVEUQ;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
             
             //Veri tabanı zaten hazır olduğu için veritabanında herhangi bir işlem yapılması engellendi.

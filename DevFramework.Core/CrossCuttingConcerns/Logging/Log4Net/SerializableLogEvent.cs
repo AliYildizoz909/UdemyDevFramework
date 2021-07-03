@@ -22,12 +22,20 @@ namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net
             get
             {
                 string val = _loggingEvent.MessageObject.ToString();
-                var i1 = val.IndexOf('{');
-                val = val.Remove(0, i1 - 1);
-                val= val.Remove(val.Length-1);
+                try
+                {
+                    var i1 = val.IndexOf('{');
+                    val = val.Remove(0, i1 - 1);
+                    val = val.Remove(val.Length - 1);
 
-                var json = JsonConvert.DeserializeObject<LogDetail>(val);
-                return json;
+                    var json = JsonConvert.DeserializeObject<LogDetail>(val);
+                    return json;
+                }
+                catch (Exception e)
+                {
+                    val = _loggingEvent.MessageObject.ToString();
+                    return val;
+                }
             }
         }
     }

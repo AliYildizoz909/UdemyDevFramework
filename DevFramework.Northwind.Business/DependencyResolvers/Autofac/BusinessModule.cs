@@ -42,10 +42,10 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Autofac
             //builder.RegisterType(typeof(EfQueryableRepository<>)).As(typeof(IQueryableRepository<>)).SingleInstance();
 
             builder.RegisterType<NorthwindContext>().As<DbContext>();
-            
+
             builder.RegisterType<SqlServerHelper>().As<NHibernateHelper>().SingleInstance();
         }
 
-        
+
     }
 }

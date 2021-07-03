@@ -9,6 +9,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers
     {
         public DatabaseLogger() : base(LogManager.GetLogger("DatabaseLogger"))
         {
+
         }
     }
 }
